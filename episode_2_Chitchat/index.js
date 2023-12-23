@@ -8,8 +8,8 @@ const obj={
     },
 };
 const obj2={
-    firstname:'venu'
-}
+  firstname:'venu'
+};
 obj.printname();
 obj.printname2();
 

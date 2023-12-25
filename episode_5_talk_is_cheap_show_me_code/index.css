@@ -1,4 +1,18 @@
-#container
+.header{
+    display:flex;
+    justify-content:space-between;
+    margin:10px;
+    border: 1px solid black;
+}
+.logo{
+    width:100px;
+}
+.nav-items > ul
 {
-    background-color: blue;
+    list-style-type:none;
+    display: flex;
+
+}
+.nav-items >ul >li {
+    padding:10px;
 }

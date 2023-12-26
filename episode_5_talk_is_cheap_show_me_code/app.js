@@ -8,7 +8,7 @@ import ReactDOM from "react-dom/client";
     body
         -search bar
         -Restaurantlist
-        -Restaurantcard
+        -Restaurantcard (many cards)
             -image
             -name
             -rating
@@ -26,7 +26,7 @@ import ReactDOM from "react-dom/client";
         />
         </a>
     );
-    const Headercomponent=()=>(
+    const Header=()=>(
             <div className="header">
                 <Title />     
                 <div className="nav-items">
@@ -39,10 +39,42 @@ import ReactDOM from "react-dom/client";
                 </div>
             </div>
     );
-
+    const chickenBiryani={
+        name:"Chicken Biryani",
+        image:"https://www.licious.in/blog/wp-content/uploads/2022/06/chicken-hyderabadi-biryani-01.jpg",
+        cusines:["Hyderabadi", "Boneless"],
+        rating:"4.2",
+    };
+        const RestaurantCard=()=>{
+            return(
+                <div className="card">
+                    <img
+                    
+                    alt="card"
+                    src={chickenBiryani.image}
+                    />
+                    <h2>{chickenBiryani.name}</h2>
+                    <h3>{chickenBiryani.cusines.join(",")}</h3>
+                    <h4>{chickenBiryani.rating} stars</h4>
+                </div>
+            );
+        };
     const Body=() =>{
         return(
-            <h4>Body</h4>
+            <div className="restuarant-list">
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            </div>
         );
     };
     const Footer=() =>{
@@ -59,13 +91,5 @@ import ReactDOM from "react-dom/client";
                 </>
             );
         };
-
-
-
-
-
-
-
     const root=ReactDOM.createRoot(document.getElementById("root"));
-    root.render(<Headercomponent/>);
-    
+    root.render(<AppLayout/>);

@@ -39,23 +39,67 @@ import ReactDOM from "react-dom/client";
                 </div>
             </div>
     );
-    const chickenBiryani={
-        name:"Chicken Biryani",
-        image:"https://www.licious.in/blog/wp-content/uploads/2022/06/chicken-hyderabadi-biryani-01.jpg",
-        cusines:["Hyderabadi", "Boneless"],
-        rating:"4.2",
-    };
+
+    const config=[
+        {
+        type:"carousel",
+        cards:[
+            {
+                offerName:"50% off"
+            },
+            {
+                offerName:"No Delivery charges"
+            }
+        ]
+        },
+        {
+            type:"restaurant",
+            cards:[
+                {
+                    name:"Chicken Biryani",
+                    image:"https://www.licious.in/blog/wp-content/uploads/2022/06/chicken-hyderabadi-biryani-01.jpg",
+                    cusines:["Hyderabadi", "Boneless"],
+                    rating:"4.2",
+                },
+                {
+                    name:"KFC",
+                    image:"https://www.licious.in/blog/wp-content/uploads/2022/06/chicken-hyderabadi-biryani-01.jpg",
+                    cusines:["Hyderabadi", "Boneless"],
+                    rating:"4.2",
+                }
+            ]
+            }
+    ]
+    const restaurantList=[
+        {
+            name:"Chicken Biryani",
+            image:"https://www.licious.in/blog/wp-content/uploads/2022/06/chicken-hyderabadi-biryani-01.jpg",
+            cusines:["Hyderabadi", "Boneless"],
+            rating:"4.2",
+        },
+        {
+            name:"KFC",
+            image:"https://www.licious.in/blog/wp-content/uploads/2022/06/chicken-hyderabadi-biryani-01.jpg",
+            cusines:["wings", "Boneless"],
+            rating:"4.0",
+        },
+        {
+            name:"Gobi Rice",
+            image:"https://www.licious.in/blog/wp-content/uploads/2022/06/chicken-hyderabadi-biryani-01.jpg",
+            cusines:["sweet", "spicy"],
+            rating:"4.5",
+        }
+    ]
         const RestaurantCard=()=>{
             return(
                 <div className="card">
                     <img
-                    
                     alt="card"
-                    src={chickenBiryani.image}
+                    src={restaurantList.image}
                     />
-                    <h2>{chickenBiryani.name}</h2>
-                    <h3>{chickenBiryani.cusines.join(",")}</h3>
-                    <h4>{chickenBiryani.rating} stars</h4>
+                    <h2>{restaurantList.name}</h2>
+                    <h3>{restaurantList.cusines.join(",")}</h3>
+                    <h4>{restaurantList.rating} stars</h4>
                 </div>
             );
         };

@@ -759,9 +759,7 @@ import ReactDOM from "react-dom/client";
               "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
             }
     ];
-        const RestaurantCard=({restaurant})=>{ 
-            const { name, cuisines, cloudinaryImageId, avgRating }=
-             restaurant.info;
+        const RestaurantCard=({name, cuisines, cloudinaryImageId, avgRating})=>{ 
             return(
                 <div className="card">
                     <img
@@ -776,16 +774,12 @@ import ReactDOM from "react-dom/client";
         };
     const Body=() =>{
         return(
-            <div className="restuarant-list">
-            <RestaurantCard restaurant = {restaurantList[0]}/>
-            <RestaurantCard restaurant = {restaurantList[1]}/>
-            <RestaurantCard restaurant = {restaurantList[2]}/>
-            <RestaurantCard restaurant = {restaurantList[3]}/>
-            <RestaurantCard restaurant = {restaurantList[4]}/>
-            <RestaurantCard restaurant = {restaurantList[5]}/>
-            <RestaurantCard restaurant = {restaurantList[6]}/>
-            <RestaurantCard restaurant = {restaurantList[7]}/>
-            <RestaurantCard restaurant = {restaurantList[8]}/>
+            <div className="restaurant-list">
+              {
+                restaurantList.map((restaurant) =>{
+                  return <RestaurantCard {...restaurant.info} key={restaurant.info.id}/>
+                })
+              }
             </div>
         );
     };
